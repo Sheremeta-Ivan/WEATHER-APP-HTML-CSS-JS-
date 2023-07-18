@@ -83,21 +83,16 @@ function onSearchClick() {
 function updateDateTime() {
   const currentDate = new Date();
 
-  // Форматування дати (приклад: "Jul 18, 2023")
   const options = { month: "short", day: "numeric", year: "numeric" };
   const formattedDate = currentDate.toLocaleDateString("en-US", options);
 
-  // Форматування часу (приклад: "10:30 AM")
   const optionsTime = { hour: "numeric", minute: "numeric", hour12: true };
   const formattedTime = currentDate.toLocaleTimeString("en-US", optionsTime);
 
-  // Оновлення вмісту елементів з датою та часом
   dateElement.textContent = formattedDate;
   timeElement.textContent = formattedTime;
 }
 
-// Виклик функції один раз для встановлення початкової дати та часу
 updateDateTime();
 
-// Оновлення дати та часу кожну хвилину
-setInterval(updateDateTime, 60000);
+setInterval(updateDateTime, 10000);
